@@ -9,8 +9,8 @@ import dotenv
 
 # define llm 
 
-os.environ["OPENAI_API_BASE"] = 'https://api.groq.com/openai/v1'
-os.environ['OPENAI_MODEL_NAME'] = 'llama3-70b-8192'
+os.environ["OPENAI_API_BASE"] = 'https://api.openai.com/v1'
+os.environ['OPENAI_MODEL_NAME'] = 'gpt-4o'
 
 
 date = datetime.datetime.now().strftime("%Y-%m-%d")
