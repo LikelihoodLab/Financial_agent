@@ -5,9 +5,10 @@ from tools.browser_tool import BrowserTools
 from tools.search_tools import SearchTools
 import datetime
 
+import dotenv
+
 # define llm 
 
-os.environ["OPENAI_API_KEY"]='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'
 os.environ["OPENAI_API_BASE"] = 'https://api.groq.com/openai/v1'
 os.environ['OPENAI_MODEL_NAME'] = 'llama3-70b-8192'
 
