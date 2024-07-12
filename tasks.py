@@ -8,7 +8,7 @@ class StockAnalysisTasks():
     return Task(description= f"""
         Collect and summarize recent news articles, press
         releases, and market analyses related to gold and
-        its industry from website such as KITCO, FXstreet, https://www.investing.com/commodities/gold-news published on {date}.
+        its industry from website such as KITCO, FXstreet, investing.com on {date}.
         Pay special attention to any significant events, market
         sentiments,and analysts' opinions. Also include upcoming central bank's monetary policies on interest rates changes, currency value changes and other relevant events that may impact the value of gold.
 
