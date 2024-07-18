@@ -1,9 +1,11 @@
 import json
 import os
+from dotenv import load_dotenv
 
 import requests
 from langchain.tools import tool
 
+api_key = os.getenv('GOOGLE_SERPER_API_KEY')
 
 class SearchTools():
   @tool("Search the internet")
@@ -14,7 +16,7 @@ class SearchTools():
     url = "https://google.serper.dev/search"
     payload = json.dumps({"q": query})
     headers = {
-        'X-API-KEY': "68dbe144a0c49318de8b21298c1a775c39de3eb5",
+        'X-API-KEY': api_key,
         'content-type': 'application/json'
     }
     response = requests.request("POST", url, headers=headers, data=payload)
@@ -35,11 +37,11 @@ class SearchTools():
   def search_news(query):
     """Useful to search news about a company, stock or any other
     topic and return relevant results"""""
-    top_result_to_return = 4
+    top_result_to_return = 10
     url = "https://google.serper.dev/news"
     payload = json.dumps({"q": query})
     headers = {
-        'X-API-KEY': "68dbe144a0c49318de8b21298c1a775c39de3eb5",
+        'X-API-KEY': api_key,
         'content-type': 'application/json'
     }
     response = requests.request("POST", url, headers=headers, data=payload)

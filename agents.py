@@ -9,8 +9,9 @@ import dotenv
 
 # define llm 
 
-os.environ["OPENAI_API_BASE"] = 'https://api.openai.com/v1'
-os.environ['OPENAI_MODEL_NAME'] = 'gpt-4o'
+# os.environ["OPENAI_API_KEY"]='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'
+# os.environ["OPENAI_API_BASE"] = 'https://api.groq.com/openai/v1'
+# os.environ['OPENAI_MODEL_NAME'] = 'llama3-70b-8192'
 
 
 date = datetime.datetime.now().strftime("%Y-%m-%d")
@@ -33,12 +34,8 @@ class StockAnalysisAgents():
   def research_analyst(self):
     return Agent(
       role='Staff Research Analyst',
-      goal="""Being the best at gather, interpret data and amaze
-      your customer with it""",
-      backstory="""Known as the BEST research analyst, you're
-      skilled in sifting through news, company announcements, 
-      and market sentiments. Now you're working on a super 
-      important customer""",
+      goal="""Gather, interpret, and synthesize data from various sources to discover actionable insights.""",
+      backstory="""Recognized as the best in the field, you excel at sifting through news, company announcements, and market sentiments to provide detailed analyses for critical clients.""",
       verbose=True,
       tools=[
               
@@ -51,13 +48,9 @@ class StockAnalysisAgents():
 
   def investment_advisor(self):
     return Agent(
-      role='Private Investment Advisor',
-      goal="""Impress your customers with full analyses over the market
-      and completer investment recommendations""",
-      backstory="""You're the most experienced investment advisor
-      and you combine various analytical insights to formulate
-      strategic investment advice. You are now working for
-      a super important customer you need to impress.""",
+      role='Strategic Investment Advisor',
+      goal=""""Analyze market data and research findings to develop comprehensive investment recommendations for high-profile clients.""",
+      backstory="""An experienced investment advisor known for combining diverse analytical insights to craft strategic investment advice, now working to impress a very important client.""",
       verbose=True,
       tools=[
         BrowserTools.scrape_and_summarize_website,

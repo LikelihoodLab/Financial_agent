@@ -9,14 +9,7 @@ class StockAnalysisTasks():
         Collect and summarize recent news articles, press
         releases, and market analyses related to gold and
         its industry from website such as KITCO, FXstreet, investing.com on {date}.
-        Pay special attention to any significant events, market
-        sentiments,and analysts' opinions. Also include upcoming central bank's monetary policies on interest rates changes, currency value changes and other relevant events that may impact the value of gold.
-
-        Your final answer MUST be a report that includes a
-        comprehensive summary of the latest news, any notable
-        shifts in market sentiment, and potential impacts on 
-        the gold.
-        Make sure to use the most recent data as possible.
+        
 
       """, 
          expected_output = "string",
@@ -24,12 +17,25 @@ class StockAnalysisTasks():
     )
 
 
+  def financial_analysis(self, agent):
+    return Task(description= f"""
+        Pay special attention to any significant events, market
+        sentiments,and analysts' opinions. Also include upcoming central bank's monetary policies on interest rates changes, currency value changes and other relevant events that may impact the value of gold.
+        Your final answer MUST be a report that includes a
+        comprehensive summary of the latest news, any notable
+        shifts in market sentiment, and potential impacts on 
+        the gold.
+        Make sure to use the most recent data as possible.
 
+        """, 
+         expected_output = "string",
+      agent=agent
+    )
 
   def recommend(self, agent):
     return Task(description=f"""
         Review and synthesize the analyses provided by the
-        Financial Analyst and the Research Analyst.
+       the Research Analyst.
         Combine these insights to form a comprehensive
         investment recommendation. 
 

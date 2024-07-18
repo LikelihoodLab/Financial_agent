@@ -8,27 +8,26 @@ from dotenv import load_dotenv
 load_dotenv()
 
 class FinancialCrew:
-
   def run(self):
     agents = StockAnalysisAgents()
     tasks = StockAnalysisTasks()
 
     research_analyst_agent = agents.research_analyst()
-    financial_analyst_agent = agents.financial_analyst()
+
     investment_advisor_agent = agents.investment_advisor()
 
     research_task = tasks.research(research_analyst_agent)
-
+    financial_analysis_task = tasks.financial_analysis(research_analyst_agent)
     recommend_task = tasks.recommend(investment_advisor_agent)
 
     crew = Crew(
       agents=[
         research_analyst_agent,
-        financial_analyst_agent,
         investment_advisor_agent
       ],
       tasks=[
         research_task,
+        financial_analysis_task,
         recommend_task
       ],
       verbose=True
