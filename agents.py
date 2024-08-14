@@ -28,7 +28,7 @@ class StockAnalysisAgents():
       strategies that is working for a super important customer.""",
         verbose=True,
         tools=[
-            BrowserTools.scrape_and_summarize_website,
+            #BrowserTools.scrape_and_summarize_website,
             SearchTools.search_internet,
             SearchTools.search_news,
         ])
@@ -42,7 +42,7 @@ class StockAnalysisAgents():
         """Recognized as the best in the field, you excel at sifting through news, company announcements, and market sentiments to provide detailed analyses for critical clients.""",
         verbose=True,
         tools=[
-            BrowserTools.scrape_and_summarize_website,
+            #BrowserTools.scrape_and_summarize_website,
             SearchTools.search_internet,
             SearchTools.search_news,
         ])
@@ -51,12 +51,12 @@ class StockAnalysisAgents():
     return Agent(
         role='Strategic Investment Advisor',
         goal=
-        """"Analyze market data and research findings to develop comprehensive investment recommendations for high-profile clients.""",
+        """"Analyze market data and research findings to develop comprehensive investment recommendations for high-profile clients and calculate an index based on the information you have gathered.""",
         backstory=
         """An experienced investment advisor known for combining diverse analytical insights to craft strategic investment advice, now working to impress a very important client.""",
         verbose=True,
         tools=[
-            BrowserTools.scrape_and_summarize_website,
+            #BrowserTools.scrape_and_summarize_website,
             SearchTools.search_internet,
             SearchTools.search_news,
         ])
