@@ -12,7 +12,7 @@ The Financial Analysis Crew is an intelligent and automated tool designed to fet
 ### Step-by-Step Setup
 1. **Clone the repository**:
     ```bash
-    git clone <repo-url>
+    git clone <https://github.com/kevin-00115/Financial_agent.git>
     cd <repo-directory>
     ```
 2. **Install dependencies**:
